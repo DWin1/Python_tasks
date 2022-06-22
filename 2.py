@@ -1,7 +1,12 @@
-#секунды в часы, минуты, секунды
+#Для списка реализовать обмен значений соседних элементов. Значениями обмениваются
+#элементы с индексами 0 и 1, 2 и 3 и т. д. При нечётном количестве элементов последний
+#сохранить на своём месте. Для заполнения списка элементов нужно использовать функцию
+#input().
 
-time_sec = int(input('Введите время в секундах'))
-time_hour = time_sec // 3600
-time_min = (time_sec % 3600) // 60
-time_sec = time_sec - (time_hour * 3600) - (time_min * 60)
-print (f"Ваши секунды в формате ЧЧ:ММ:СС {time_hour}:{time_min}:{time_sec}")
+my_list = input('Введите элементы списка через пробел >>').split()
+print(my_list, type(my_list))
+
+for el in range(0, len(my_list)-1, 2):
+    my_list[el], my_list[el + 1] = my_list[el + 1], my_list[el]
+
+print(my_list)
