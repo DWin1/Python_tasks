@@ -4,16 +4,21 @@
 Осуществить вывод данных о пользователе одной строкой.'''
 
 
-name1 = input('Введите имя >> ')
-name2 = input('Введите фамилию >> ')
-birthday = input('Введите дату рождения >> ')
-city = input('Введите город проживания >> ')
-email = input('Введите email >> ')
-phone = input('Введите номер телефона >> ')
+#name1 = input('Введите имя >> ')
+#name2 = input('Введите фамилию >> ')
+#birthday = input('Введите дату рождения >> ')
+#city = input('Введите город проживания >> ')
+#email = input('Введите email >> ')
+#phone = input('Введите номер телефона >> ')
 
 
-def user_char(name1, name2, birthday, city, email, phone):
-    return print(f"Пользователь {name1} {name2} {birthday} г.р., проживает в г. {city}, "
-                 f"почта {email}, номер телефона {phone}")
+def user_char(**kwargs):
+    print(f"Пользователь {kwargs['name1']} {kwargs['name2']} {kwargs['birthday']} г.р., проживает в г. "
+          f"{kwargs['city']}, почта {kwargs['email']}, номер телефона {kwargs['phone']}")
 
-print(user_char(name1, name2, birthday, city, email, phone))
+user_char(name1="Иван",
+          name2="Иванов",
+          birthday="08.08.1990",
+          city="Москва",
+          email="exam@mail.ru",
+          phone="88888888")

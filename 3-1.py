@@ -7,7 +7,7 @@ arg2 = int(input('Введите делитель '))
 
 def my_div(arg1, arg2):
     if arg2 == 0:
-        return print('На ноль делить нельзя!')
+        print('На ноль делить нельзя!')
     else:
         res1 = arg1 / arg2
         return res1
